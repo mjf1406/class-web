@@ -1,22 +1,19 @@
 /** @format */
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_NAME } from "@/settings/settings";
+import { Inter } from "next/font/google";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const inter = Inter({
     subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-inter",
+    adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -31,9 +28,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
-            >
+            <body className={`${inter.variable} scroll-smooth antialiased`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
