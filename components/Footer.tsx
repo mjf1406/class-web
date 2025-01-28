@@ -8,6 +8,7 @@ import {
     RESOURCE_LINKS,
     SOCIAL_LINKS,
 } from "@/settings/navigation";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -33,7 +34,7 @@ export default function Footer() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                    className="block text-sm text-muted-foreground hover:underline hover:text-foreground transition-colors"
                                 >
                                     {link.text}
                                 </Link>
@@ -53,9 +54,9 @@ export default function Footer() {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                    className="flex gap-1 text-sm items-center text-muted-foreground hover:underline hover:text-foreground transition-colors"
                                 >
-                                    {link.text}
+                                    {link.text} <ArrowRight size={12} />
                                 </Link>
                             ))}
                         </nav>
