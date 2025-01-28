@@ -11,7 +11,7 @@ import {
 export default function FAQ() {
     return (
         <div className="w-full mx-auto mt-20">
-            <div className="max-w-7xl flex flex-col justify-center items-center mx-auto">
+            <div className=" px-4 max-w-7xl flex flex-col justify-center items-center mx-auto">
                 <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
                     <h2
                         id="faq"
