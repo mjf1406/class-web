@@ -1,26 +1,122 @@
 /** @format */
 
-import {
-    MonitorCog,
-    Wand2,
-    Dices,
-    ScrollText,
-    Hammer,
-    Construction,
-} from "lucide-react"; // <- added BarChart2
+import { MonitorCog, Wand2, Dices, ScrollText, Hammer } from "lucide-react";
 import {
     Card,
     CardHeader,
     CardTitle,
     CardDescription,
     CardContent,
-    CardFooter,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/settings/settings";
+import React from "react";
+import { cn } from "@/lib/utils"; // Make sure you have this utility file
 
-// Each card has a "underConstruction" boolean
-// and "content" is split into { name, description } objects
+// Define types
+interface ContentItem {
+    name: string;
+    description: string;
+}
+
+interface FeatureCardProps {
+    title: string;
+    description: string;
+    content: ContentItem[];
+    underConstruction: boolean;
+    icon: React.ComponentType<{ className?: string }>;
+}
+
+// FeatureCard component
+// eslint-disable-next-line react/display-name
+const FeatureCard = React.memo(
+    ({
+        title,
+        description,
+        content,
+        underConstruction,
+        icon: Icon,
+    }: FeatureCardProps) => {
+        return (
+            <Card
+                className={cn(
+                    "bg-foreground/5 md:bg-background",
+                    underConstruction && "opacity-50"
+                )}
+            >
+                <CardHeader className="p-4">
+                    <div className="flex items-center gap-2">
+                        <Icon className="w-5 h-5 text-foreground" />
+                        <CardTitle className="text-lg">{title}</CardTitle>
+                    </div>
+                    <CardDescription className="text-sm">
+                        {description}
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="px-4">
+                    <ul className="space-y-2 list-disc ml-5">
+                        {content.map((bullet: ContentItem, i: number) => (
+                            <li
+                                key={i}
+                                className="text-xs leading-relaxed"
+                            >
+                                <strong className="font-medium">
+                                    {bullet.name}:
+                                </strong>
+                                <span className="text-muted-foreground">
+                                    {" "}
+                                    {bullet.description}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </CardContent>
+            </Card>
+        );
+    }
+);
+
+// Main component
+export default function FeaturesSection() {
+    return (
+        <div className="w-full mx-auto mt-20">
+            <div className="px-4 max-w-7xl flex flex-col justify-center items-center mx-auto">
+                <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+                    <h2
+                        id="features"
+                        className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
+                    >
+                        Your time as a teacher is extremely valuable
+                    </h2>
+                    <p className="text-muted-foreground">
+                        As a teacher myself, I know I&apos;m expected to do too
+                        much.{" "}
+                    </p>
+                    <p className="text-muted-foreground">
+                        Use {APP_NAME} to quickly manage your class with
+                        classroom screens, track attendance, auto-generate
+                        worksheets, and assign students fairly. Everything is
+                        designed to save you time, keep students engaged, and
+                        make your life as a teacher far easier.
+                    </p>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {featureCards.map((item, index) => (
+                        <FeatureCard
+                            key={index}
+                            title={item.title}
+                            description={item.description}
+                            content={item.content}
+                            underConstruction={item.underConstruction}
+                            icon={item.icon}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
 const featureCards = [
     {
         title: "Screens",
@@ -142,97 +238,3 @@ const featureCards = [
         ],
     },
 ];
-
-export default function FeaturesSection() {
-    return (
-        <div className="w-full mx-auto mt-20">
-            <div className="px-4 max-w-7xl flex flex-col justify-center items-center mx-auto">
-                <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-                    <h2
-                        id="features"
-                        className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
-                    >
-                        Your time as a teacher is extremely valuable
-                    </h2>
-                    <p className="text-muted-foreground">
-                        As a teacher myself, I know I&apos;m expected to do too
-                        much.{" "}
-                    </p>
-                    <p className=" text-muted-foreground">
-                        Use {APP_NAME} to quickly manage your class with
-                        classroom screens, track attendance, auto-generate
-                        worksheets, and assign students fairly. Everything is
-                        designed to save you time, keep students engaged, and
-                        make your life as a teacher far easier.
-                    </p>
-                    {/* <Button
-                                variant="default"
-                                asChild
-                            >
-                                <Link href="/features">See All Features</Link>
-                            </Button> */}
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {featureCards.map((item, index) => {
-                        const Icon = item.icon;
-                        return (
-                            <Card
-                                key={index}
-                                // If under construction, dim card (50% opacity)
-                                className={
-                                    item.underConstruction
-                                        ? "opacity-50"
-                                        : "" +
-                                          "bg-foreground/5 md:bg-background"
-                                }
-                            >
-                                <CardHeader>
-                                    {/* Title + Icon Row */}
-                                    <div className="flex items-center gap-2">
-                                        <Icon className="w-5 h-5 text-foreground" />
-                                        <CardTitle>{item.title}</CardTitle>
-                                    </div>
-                                    <CardDescription>
-                                        {item.description}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="list-disc list-inside space-y-1 text-xs">
-                                        {item.content.map((bullet, i) => (
-                                            <li key={i}>
-                                                <strong>{bullet.name}:</strong>{" "}
-                                                <span className="dark:text-foreground/70">
-                                                    {bullet.description}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                                <CardFooter>
-                                    {item.underConstruction ? (
-                                        <Button
-                                            variant="link"
-                                            disabled
-                                        >
-                                            <Construction /> Under Construction
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            variant="link"
-                                            asChild
-                                        >
-                                            {/* <Link href={item.link}>
-                                                        Learn More
-                                                    </Link> */}
-                                        </Button>
-                                    )}
-                                </CardFooter>
-                            </Card>
-                        );
-                    })}
-                </div>
-            </div>
-        </div>
-    );
-}
