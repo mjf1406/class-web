@@ -75,7 +75,7 @@ export default function Hero() {
                             <Link href="#features">Learn more</Link>
                         </Button>
                         <Link
-                            href={`https://www.${DOMAIN_NAME}/classes`}
+                            href={`https://app.${DOMAIN_NAME}/classes`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="self-center"
