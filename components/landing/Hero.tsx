@@ -4,10 +4,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { AlertTriangleIcon, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ALPHA_TESTERS_COUNT } from "@/settings/settings";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export default function Hero() {
     return (
@@ -57,7 +56,7 @@ export default function Hero() {
                         </p>
                     </div>
 
-                    <div className="mt-4 flex flex-wrap flex-col md:flex-row gap-2">
+                    <div className="mt-4 flex flex-wrap flex-col md:flex-row gap-2 justify-center items-stretch">
                         <Button
                             variant="default"
                             className="h-12 px-8 text-lg"
@@ -70,37 +69,19 @@ export default function Hero() {
                         >
                             <Link href="#features">Learn more</Link>
                         </Button>
-                        <div>
-                            <Tooltip delayDuration={0}>
-                                <TooltipTrigger>
-                                    <Link
-                                        href="https://www.classquest.app/classes"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Button
-                                            variant="secondary"
-                                            className="h-12 px-8 text-lg"
-                                        >
-                                            Create my first class <ArrowRight />
-                                        </Button>
-                                    </Link>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>Alpha testers only for now!</p>
-                                </TooltipContent>
-                            </Tooltip>
-                            <div className="mt-1 flex items-center w-full mx-auto justify-center gap-0.5 text-xs text-muted-foreground">
-                                <AlertTriangleIcon
-                                    size={16}
-                                    className="mr-1"
-                                />{" "}
-                                Alpha testers only!
-                            </div>
-                        </div>
+                        <Link
+                            href="https://www.classquest.app/classes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="self-center"
+                        >
+                            <Button variant="ghost">
+                                I&apos;m an alpha tester <ArrowRight />
+                            </Button>
+                        </Link>
                     </div>
                     <p className="text-sm -mb-4">
-                        😁 {ALPHA_TESTERS_COUNT} Happy & Engaged Alpha Testers
+                        😁 {ALPHA_TESTERS_COUNT} satisfied alpha testers!
                     </p>
                 </div>
             </div>

@@ -22,13 +22,7 @@ export default function PricingSection() {
                 </div>
                 <p className="max-w-2xl">
                     {APP_NAME} is currently in alpha and free for authorized
-                    users only. Stay tuned for pricing information. I can,
-                    however, state that it will be free forever as long as
-                    you&apos;re okay with only saving your data to your one
-                    computer and browser you use it on. This means that if you
-                    use {APP_NAME} on your desktop at school in Google Chrome,
-                    the data will only be accessible from Google Chrome on your
-                    desktop at school and nowhere else.
+                    users only. Stay tuned for pricing information.
                 </p>
                 {/* <PricingCardGrid /> */}
                 {/* <ComparisonTable /> */}
