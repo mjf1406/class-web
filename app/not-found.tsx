@@ -25,7 +25,7 @@ export default function Custom404() {
                     <CardDescription>404 Not Found</CardDescription>
                     {/* Fun SVG Art */}
                     <Image
-                        src={image404} // Ensure you have this SVG in your public/images directory
+                        src={image404}
                         alt="Funny Robot"
                         width={300}
                         height={300}
