@@ -15,6 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import BackButton from "@/components/BackButton";
+import image404 from "../public/images/sprouty-404.png";
 
 export default function Custom404() {
     return (
@@ -24,11 +25,13 @@ export default function Custom404() {
                     <CardDescription>404 Not Found</CardDescription>
                     {/* Fun SVG Art */}
                     <Image
-                        src="/images/sprouty-404.png" // Ensure you have this SVG in your public/images directory
+                        src={image404} // Ensure you have this SVG in your public/images directory
                         alt="Funny Robot"
                         width={300}
                         height={300}
                         className="mb-4"
+                        placeholder="blur"
+                        blurDataURL=""
                     />
                     <CardTitle className="text-3xl font-bold">Oops!</CardTitle>
                 </CardHeader>
