@@ -33,8 +33,9 @@ export const PRODUCT_LINKS = [
 ];
 
 export const RESOURCE_LINKS = [
-    { href: `https://docs.${DOMAIN_NAME}`, text: `Docs` },
+    { href: `https://app.${DOMAIN_NAME}`, text: `App` },
     { href: `https://blog.${DOMAIN_NAME}`, text: `Blog` },
+    { href: `https://docs.${DOMAIN_NAME}`, text: `Docs` },
     { href: `https://status.${DOMAIN_NAME}`, text: "Status" },
 ];
 
