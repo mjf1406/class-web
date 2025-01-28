@@ -26,7 +26,7 @@ export function Logo({ fill, size }: LogoProps) {
 export function LogoHeader() {
     return (
         <Link
-            href="#hero"
+            href="/"
             className="flex items-center gap-2"
         >
             <Logo

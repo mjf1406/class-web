@@ -5,7 +5,7 @@ import { DOMAIN_NAME } from "./settings";
 
 export const NAV_LINKS = [
     {
-        title: "Home",
+        title: "Top",
         href: "#hero",
         external: false,
     },
