@@ -1,6 +1,7 @@
 /** @format */
 import { Mail } from "lucide-react";
 import { BsTwitterX, BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
+import { DOMAIN_NAME } from "./settings";
 
 export const NAV_LINKS = [
     {
@@ -32,10 +33,9 @@ export const PRODUCT_LINKS = [
 ];
 
 export const RESOURCE_LINKS = [
-    { href: "https://docs.classquest.app", text: "Documentation" },
-    { href: "https://blog.classquest.app", text: "Blog" },
-    { href: "https://docs.classquest.app/guides", text: "Guides" },
-    { href: "https://status.classquest.app", text: "Status" },
+    { href: `https://docs.${DOMAIN_NAME}`, text: `Docs` },
+    { href: `https://blog.${DOMAIN_NAME}`, text: `Blog` },
+    { href: `https://status.${DOMAIN_NAME}`, text: "Status" },
 ];
 
 export const SOCIAL_LINKS = [
@@ -55,5 +55,5 @@ export const SOCIAL_LINKS = [
         icon: <BsYoutube className="h-5 w-5" />,
         href: "https://youtube.com/classquest",
     },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:hello@classquest.app" },
+    { icon: <Mail className="h-5 w-5" />, href: `mailto:hello@${DOMAIN_NAME}` },
 ];

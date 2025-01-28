@@ -133,11 +133,11 @@ const featureCards = [
             },
             {
                 name: "Expectations",
-                description: "see any expectations they have set for them",
+                description: "see any expectations set for them",
             },
             {
                 name: "Tasks",
-                description: "see which tasks need to be worked on today",
+                description: "see which tasks need to be worked on",
             },
         ],
     },
@@ -152,113 +152,85 @@ export default function FeaturesSection() {
                         id="features"
                         className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
                     >
-                        Features
+                        Your time as a teacher is extremely valuable
                     </h2>
-                    <p className="mt-1 text-muted-foreground">
-                        Explore tools that enhance your classroom with gamified
-                        learning elements. The below features aim to boost
-                        student engagement while simplifying your teaching
-                        workflow.
+                    <p className="text-muted-foreground">
+                        As a teacher myself, I know I&apos;m expected to do too
+                        much.{" "}
                     </p>
-                </div>
-
-                <div className="grid gap-8 grid-cols-1">
-                    {/* Summary on the left, five cards on the right */}
-                    <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-3">
-                        {/* Left side summary */}
-                        <div className="space-y-4 w-full mx-auto max-w-xl col-span-1">
-                            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-                                Your time as a teacher is extremely valuable
-                            </h3>
-                            <p className="text-muted-foreground">
-                                As a teacher myself, I know I&apos;m expected to
-                                do too much.{" "}
-                            </p>
-                            <p className=" text-muted-foreground">
-                                Use {APP_NAME} to quickly manage your class with
-                                classroom screens, track attendance,
-                                auto-generate worksheets, and assign students
-                                fairly. Everything is designed to save you time,
-                                keep students engaged, and make your life as a
-                                teacher far easier.
-                            </p>
-                            {/* <Button
+                    <p className=" text-muted-foreground">
+                        Use {APP_NAME} to quickly manage your class with
+                        classroom screens, track attendance, auto-generate
+                        worksheets, and assign students fairly. Everything is
+                        designed to save you time, keep students engaged, and
+                        make your life as a teacher far easier.
+                    </p>
+                    {/* <Button
                                 variant="default"
                                 asChild
                             >
                                 <Link href="/features">See All Features</Link>
                             </Button> */}
-                        </div>
+                </div>
 
-                        {/* Right side: five cards */}
-                        <div className="grid gap-4 sm:grid-cols-2 col-span-1 lg:col-span-2">
-                            {featureCards.map((item, index) => {
-                                const Icon = item.icon;
-                                return (
-                                    <Card
-                                        key={index}
-                                        // If under construction, dim card (50% opacity)
-                                        className={
-                                            item.underConstruction
-                                                ? "opacity-50"
-                                                : ""
-                                        }
-                                    >
-                                        <CardHeader>
-                                            {/* Title + Icon Row */}
-                                            <div className="flex items-center gap-2">
-                                                <Icon className="w-5 h-5 text-foreground" />
-                                                <CardTitle>
-                                                    {item.title}
-                                                </CardTitle>
-                                            </div>
-                                            <CardDescription>
-                                                {item.description}
-                                            </CardDescription>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <ul className="list-disc list-inside space-y-1 text-xs">
-                                                {item.content.map(
-                                                    (bullet, i) => (
-                                                        <li key={i}>
-                                                            <strong>
-                                                                {bullet.name}:
-                                                            </strong>{" "}
-                                                            <span className="dark:text-foreground/70">
-                                                                {
-                                                                    bullet.description
-                                                                }
-                                                            </span>
-                                                        </li>
-                                                    )
-                                                )}
-                                            </ul>
-                                        </CardContent>
-                                        <CardFooter>
-                                            {item.underConstruction ? (
-                                                <Button
-                                                    variant="link"
-                                                    disabled
-                                                >
-                                                    <Construction /> Under
-                                                    Construction
-                                                </Button>
-                                            ) : (
-                                                <Button
-                                                    variant="link"
-                                                    asChild
-                                                >
-                                                    {/* <Link href={item.link}>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {featureCards.map((item, index) => {
+                        const Icon = item.icon;
+                        return (
+                            <Card
+                                key={index}
+                                // If under construction, dim card (50% opacity)
+                                className={
+                                    item.underConstruction
+                                        ? "opacity-50"
+                                        : "" +
+                                          "bg-foreground/5 md:bg-background"
+                                }
+                            >
+                                <CardHeader>
+                                    {/* Title + Icon Row */}
+                                    <div className="flex items-center gap-2">
+                                        <Icon className="w-5 h-5 text-foreground" />
+                                        <CardTitle>{item.title}</CardTitle>
+                                    </div>
+                                    <CardDescription>
+                                        {item.description}
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="list-disc list-inside space-y-1 text-xs">
+                                        {item.content.map((bullet, i) => (
+                                            <li key={i}>
+                                                <strong>{bullet.name}:</strong>{" "}
+                                                <span className="dark:text-foreground/70">
+                                                    {bullet.description}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                                <CardFooter>
+                                    {item.underConstruction ? (
+                                        <Button
+                                            variant="link"
+                                            disabled
+                                        >
+                                            <Construction /> Under Construction
+                                        </Button>
+                                    ) : (
+                                        <Button
+                                            variant="link"
+                                            asChild
+                                        >
+                                            {/* <Link href={item.link}>
                                                         Learn More
                                                     </Link> */}
-                                                </Button>
-                                            )}
-                                        </CardFooter>
-                                    </Card>
-                                );
-                            })}
-                        </div>
-                    </div>
+                                        </Button>
+                                    )}
+                                </CardFooter>
+                            </Card>
+                        );
+                    })}
                 </div>
             </div>
         </div>

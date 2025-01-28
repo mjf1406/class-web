@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ALPHA_TESTERS_COUNT } from "@/settings/settings";
+import { ALPHA_TESTERS_COUNT, DOMAIN_NAME } from "@/settings/settings";
 
 export default function Hero() {
     return (
@@ -28,7 +28,7 @@ export default function Hero() {
             <div className="w-full max-w-4xl mx-auto px-4 md:px-6 relative z-10">
                 {/* Social Proof & Blog Link */}
                 <div className="flex flex-col justify-between h-full items-center gap-4 mb-8">
-                    <Link href="https://blog.classquest.app/blog/new-feature">
+                    <Link href={`https://blog.${DOMAIN_NAME}/blog/new-feature`}>
                         <Badge
                             variant="secondary"
                             className="gap-2 hover:bg-secondary/80"
@@ -61,7 +61,13 @@ export default function Hero() {
                             variant="default"
                             className="h-12 px-8 text-lg"
                         >
-                            <Link href="#features">Sign up for the beta</Link>
+                            <Link
+                                href="https://forms.gle/NTZgCEQSxMzmdDYY7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Sign up for the beta
+                            </Link>
                         </Button>
                         <Button
                             variant="outline"
@@ -70,7 +76,7 @@ export default function Hero() {
                             <Link href="#features">Learn more</Link>
                         </Button>
                         <Link
-                            href="https://www.classquest.app/classes"
+                            href={`https://www.${DOMAIN_NAME}/classes`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="self-center"

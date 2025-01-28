@@ -27,7 +27,13 @@ export function Navbar() {
                     </div>
                     <div className="flex gap-2 items-center">
                         <Button variant="default">
-                            <Link href="#features">Beta sign up</Link>
+                            <Link
+                                href="https://forms.gle/NTZgCEQSxMzmdDYY7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Beta sign up
+                            </Link>
                         </Button>
                         <div className="flex sm:ml-0 gap-2">
                             <ModeToggle />
