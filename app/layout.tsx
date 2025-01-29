@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: `${APP_NAME} - Landing Page`,
+    title: `${APP_NAME} - Home`,
     description: "Tools for classroom management",
 };
 
