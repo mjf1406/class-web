@@ -37,7 +37,7 @@ export const RESOURCE_LINKS = [
     { href: `https://blog.${DOMAIN_NAME}`, text: `Blog` },
     { href: `https://docs.${DOMAIN_NAME}`, text: `Docs` },
     {
-        href: `https://tattered-raptor-b11.notion.site/18ff3919e41d8019a43ecc4a319fa9c8?v=18ff3919e41d8128ba5b000c79c579f5`,
+        href: `https://tattered-raptor-b11.notion.site/18ff3919e41d8019a43ecc4a319fa9c8?v=18ff3919e41d80a19fe4000c4d124a87`,
         text: `Roadmap`,
     },
     { href: `https://status.${DOMAIN_NAME}`, text: "Status" },
