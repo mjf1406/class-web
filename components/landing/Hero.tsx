@@ -27,12 +27,14 @@ export default function Hero() {
             <div className="w-full max-w-4xl mx-auto px-4 md:px-6 relative z-10">
                 {/* Social Proof & Blog Link */}
                 <div className="flex flex-col justify-between h-full items-center gap-4 mb-8">
-                    <Link href={`https://blog.${DOMAIN_NAME}/blog/new-feature`}>
+                    <Link
+                        href={`https://tattered-raptor-b11.notion.site/18ff3919e41d8019a43ecc4a319fa9c8?v=18ff3919e41d8128ba5b000c79c579f5`}
+                    >
                         <Badge
                             variant="secondary"
                             className="gap-2 hover:bg-secondary/80"
                         >
-                            🎉 New Feature: Interactive Quizzes{" "}
+                            🎉 Checkout our Roadmap!{" "}
                             <ArrowRight className="h-4 w-4" />
                         </Badge>
                     </Link>

@@ -36,6 +36,10 @@ export const RESOURCE_LINKS = [
     { href: `https://app.${DOMAIN_NAME}`, text: `App` },
     { href: `https://blog.${DOMAIN_NAME}`, text: `Blog` },
     { href: `https://docs.${DOMAIN_NAME}`, text: `Docs` },
+    {
+        href: `https://tattered-raptor-b11.notion.site/18ff3919e41d8019a43ecc4a319fa9c8?v=18ff3919e41d8128ba5b000c79c579f5`,
+        text: `Roadmap`,
+    },
     { href: `https://status.${DOMAIN_NAME}`, text: "Status" },
 ];
 
