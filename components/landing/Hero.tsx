@@ -29,6 +29,8 @@ export default function Hero() {
                 <div className="flex flex-col justify-between h-full items-center gap-4 mb-8">
                     <Link
                         href={`https://tattered-raptor-b11.notion.site/18ff3919e41d8019a43ecc4a319fa9c8?v=18ff3919e41d8128ba5b000c79c579f5`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <Badge
                             variant="secondary"
