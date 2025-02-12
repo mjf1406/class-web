@@ -42,19 +42,19 @@ export const RESOURCE_LINKS = [
 export const SOCIAL_LINKS = [
     {
         icon: <BsTwitterX className="h-5 w-5" />,
-        href: "https://X.com/classquest",
+        href: "https://X.com/classclarus",
     },
     {
         icon: <BsGithub className="h-5 w-5" />,
-        href: "https://github.com/classquest",
+        href: "https://github.com/classclarus",
     },
     {
         icon: <BsLinkedin className="h-5 w-5" />,
-        href: "https://linkedin.com/company/classquest",
+        href: "https://linkedin.com/company/classclarus",
     },
     {
         icon: <BsYoutube className="h-5 w-5" />,
-        href: "https://youtube.com/classquest",
+        href: "https://youtube.com/classclarus",
     },
     { icon: <Mail className="h-5 w-5" />, href: `mailto:hello@${DOMAIN_NAME}` },
 ];

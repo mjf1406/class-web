@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# ClassQuest Landing Page
+# ClassClarus Landing Page
 
-The landing page for [ClassQuest](https://www.classquest.app)
+The landing page for [ClassClarus](https://www.classclarus.app)
 
 ## To-do List
 
